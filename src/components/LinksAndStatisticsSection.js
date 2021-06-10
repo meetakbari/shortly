@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import BgShortenDesktop from '../assets/images/bg-shorten-desktop.svg'
-import BgShortenMobile from '../assets/images/bg-shorten-mobile.svg'
+// import BgShortenMobile from '../assets/images/bg-shorten-mobile.svg'
 import GeneratedLink from './GeneratedLink';
 
 const Container = styled.div`
@@ -116,14 +116,14 @@ const StatisticsCardsContainer = styled.div`
     border: 1px solid green;
 `;
 
-const ShowAddlinkError = () => {
-    let x = document.getElementById("blank-link-error-msg");
-    if (window.getComputedStyle(x).display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
+// const ShowAddlinkError = () => {
+//     let x = document.getElementById("blank-link-error-msg");
+//     if (window.getComputedStyle(x).display === "none") {
+//         x.style.display = "block";
+//     } else {
+//         x.style.display = "none";
+//     }
+// }
 
 export default function LinksAndStatisticsSection() {
 
@@ -162,17 +162,20 @@ export default function LinksAndStatisticsSection() {
     const [link, setLink] = useState('');
     const [linkToSend, setLinkToSend] = useState('');
 
-    useEffect(async () => {
-        if (linkToSend.trim().length !== 0) {
-            const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${linkToSend}`);
-            const data = await response.json();
-            let originalLink = data.result.original_link;
-            let shortenLink = data.result.full_short_link2;
-            addLink(originalLink, shortenLink);
-            setLink("");
-            setLinkToSend("");
+    useEffect(() => {
+        async function fetchData(){
+            if (linkToSend.trim().length !== 0) {
+                const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${linkToSend}`);
+                const data = await response.json();
+                let originalLink = data.result.original_link;
+                let shortenLink = data.result.full_short_link2;
+                addLink(originalLink, shortenLink);
+                setLink("");
+                setLinkToSend("");
+            }
         }
-    })
+        fetchData();
+    }, [link, linkToSend]);
 
     const submit = (e) => {
         e.preventDefault();
