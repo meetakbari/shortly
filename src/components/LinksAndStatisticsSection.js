@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components';
 import BgShortenDesktop from '../assets/images/bg-shorten-desktop.svg'
 // import BgShortenMobile from '../assets/images/bg-shorten-mobile.svg'
@@ -144,7 +144,7 @@ export default function LinksAndStatisticsSection() {
     }, [links]);
 
     // to add a new shorten link in the list
-    const addLink = (originalLink, shortenLink) => {
+    const addLink = useCallback((originalLink, shortenLink) => {
         let index;
         if (links.length === 0) {
             index = 0;
@@ -157,7 +157,7 @@ export default function LinksAndStatisticsSection() {
             shortenLink: shortenLink,
         };
         setLinks([...links, newLink]);
-    };
+    }, [links]);
 
     const [link, setLink] = useState('');
     const [linkToSend, setLinkToSend] = useState('');
@@ -175,7 +175,7 @@ export default function LinksAndStatisticsSection() {
             }
         }
         fetchData();
-    }, [link, linkToSend]);
+    }, [link, linkToSend, addLink]);
 
     const submit = (e) => {
         e.preventDefault();
