@@ -13,4 +13,4 @@ Web Application developed with intend to learn API, Reactjs and styled component
 + ShrtCode API
 + LocalStorage for Data storage
 
-Click (here)[http://shorttly.vercel.app/] to view the deployment.
+Click [here](http://shorttly.vercel.app/) to view the deployment.
