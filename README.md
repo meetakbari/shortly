@@ -1,4 +1,4 @@
-# short.ly
+# shortly
 Web Application developed with intend to learn API, Reactjs and styled components and provide a easy to use solution to users.
 
 ### Usage
