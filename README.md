@@ -1,5 +1,5 @@
 # shortly
-Web Application developed with intend to learn API integration, Reactjs and styled components and providing an easy to use solution.
+Web Application developed with intend to learn API integration, Reactjs and styled components and providing an easy to use solution. Click [here](http://shorttly.vercel.app/) to use the solution.
 
 ### NOTE
 + After clicking the **Shorten it!** button, please do wait for around 10-12 seconds, as API takes time respond to the request.
@@ -16,4 +16,3 @@ Web Application developed with intend to learn API integration, Reactjs and styl
 + ShrtCode API
 + LocalStorage for Data storage
 
-Click [here](http://shorttly.vercel.app/) to view the deployment.
