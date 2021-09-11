@@ -1,5 +1,8 @@
 # shortly
-Web Application developed with intend to learn API, Reactjs and styled components and provide a easy to use solution to users.
+Web Application developed with intend to learn API integration, Reactjs and styled components and providing an easy to use solution.
+
+### NOTE
++ After clicking the **Shorten it!** button, please do wait for around 10-12 seconds, as API takes time respond to the request.
 
 ### Usage
 + Clone the repository in your local machine.
